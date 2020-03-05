@@ -1,0 +1,24 @@
+body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+}
+
+center{
+    padding:10px;
+    color: #222D32;;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.padd_marg_row{
+    padding: 10px;
+    margin: 40px;
+}
+
+.padd_col{
+    padding: 50px;
+}
+
+.columns_color{
+    background: white;
+}
