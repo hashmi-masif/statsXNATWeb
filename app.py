@@ -3,6 +3,8 @@ import configFileGenerator
 from src import dataFetcher
 
 app = Flask(__name__)
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 data_fetched = None
 
 @app.route("/")
@@ -21,6 +23,7 @@ def login():
         userPassword = userDetail['password']
         global data_fetched 
         data_fetched = CONFIG_FILE_GENERATOR.name_and_pass(name= userName, password=userPassword)
+        data_fetched.append(userName)
         print(data_fetched)
         return redirect("http://127.0.0.1:5000/dashboard")
     else:
@@ -33,6 +36,7 @@ def dashboard():
     global data_fetched
     print(data_fetched)
     return render_template('dashboard.html',data_fetched = data_fetched)
+
 
 
 if __name__ == "__main__":
