@@ -106,9 +106,12 @@ class Formatter:
                 else:
                     counter_unknown_hand = counter_unknown_hand + 1
 
+            # Making a list to be returned to the flask app for jinja
+
             return [len(projects_table), len(subjects_table), len(experiments_table), 
                     counter_left_hand, counter_right_hand, counter_unknown, 
                     counter_male, counter_female, counter_unknown]
         else:
             print("Please check network connection")
             print("Please check username or password in configuration file")
+            return None
