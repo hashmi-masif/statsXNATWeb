@@ -8,11 +8,11 @@ class ConfigFileGenerator:
 
     def name_and_pass(self, name, password, test_check=0): # Function for taking input from the users
 
-        if(test_check == 0):     # To check whether 
+        if(test_check == 0):     # To check whether network connection is fine 
             self.name = name
             self.password = password
-            data = self.generator()
-            return data
+            data = self.generator() 
+            return data         # This will return list containing information or None
         else:
             self.name = 'testUser'
             self.password = 'testPassword'
@@ -31,5 +31,5 @@ class ConfigFileGenerator:
 
         DATA_FORMATTER = dataFormatter.Formatter()
 
-        stats = DATA_FORMATTER.stats()          # stats() returns the data from formatter
+        stats = DATA_FORMATTER.stats()          # stats() returns the data fetched from formatter
         return stats
