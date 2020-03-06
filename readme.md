@@ -18,4 +18,4 @@ statsXNATWeb is a integration of statsXNAT with a website. This website gives th
 - Starting the server type ``` python3 app.py``` 
 
 ## File Structure  
-![File Structure](https://github.com/Udolf15/statsXNATWeb/images/fileStruct.jpg)
+![File Structure](https://github.com/Udolf15/statsXNATWeb/blob/master/images/fileStruct.jpg)
