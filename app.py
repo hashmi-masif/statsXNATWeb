@@ -10,7 +10,7 @@ data_fetched = None
 # This route redirect to login page
 @app.route("/")
 def home():
-    return redirect("http://127.0.0.1:5000/login")
+    return redirect("https://statsxnat.heroku.com/login")
 
 
 # Login Route
@@ -34,7 +34,8 @@ def login():
         if(data_fetched != None): # If the credential are right then add userName
             data_fetched.append(userName)
             print(data_fetched)
-        return redirect("http://127.0.0.1:5000/dashboard")
+
+        return redirect("https://statsxnat.heroku.com/dashboard")
 
     else:
 
@@ -58,4 +59,4 @@ def dashboard():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(threaded=True, port=5000)
