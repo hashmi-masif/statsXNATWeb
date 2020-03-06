@@ -24,7 +24,7 @@ class ConfigFileGenerator:
                             user = self.name,
                             password = self.password    )
 
-        central.save_config('ConfigFile/central.cfg')
+        central.save_config('../ConfigFile/central.cfg')
         print("Configuration file Created...........")
 
         # Creating the object for formatter
