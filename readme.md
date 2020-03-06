@@ -16,6 +16,7 @@ statsXNATWeb is a integration of statsXNAT with a website. This website gives th
 ## Getting Started 
 - Installing the required dependencies type ```pip3 install -r requirements.txt``` 
 - Starting the server type ``` python3 app.py``` 
+- Testing ``` pytest tests/ ```
 
 ## File Structure  
 ![File Structure](https://github.com/Udolf15/statsXNATWeb/blob/master/images/fileStruct.jpg)
