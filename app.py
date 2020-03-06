@@ -23,16 +23,16 @@ def login():
 
     if(request.method== 'POST'):
 
-        userDetail = request.form
-        userName = userDetail['username']
-        userPassword = userDetail['password']
+        user_detail = request.form
+        user_name = userDetail['username']
+        user_password = userDetail['password']
         global data_fetched 
         global dataFormatter
-        data_formatter = dataFormatter.Formatter(userName, userPassword)
+        data_formatter = dataFormatter.Formatter(user_name, user_password)
         data_fetched = data_formatter.stats()
 
         if(data_fetched != None): # If the credential are right then add userName
-            data_fetched.append(userName)
+            data_fetched.append(user_name)
             print(data_fetched)
 
         return redirect("https://statsxnat.herokuapp.com/dashboard")
