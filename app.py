@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect
-from src import configFileGenerator
+from src import dataFormatter
 
 app = Flask(__name__)
 
@@ -10,31 +10,34 @@ data_fetched = None
 # This route redirect to login page
 @app.route("/")
 def home():
-    return redirect("https://statsxnat.herokuapp.com/login")
+    return redirect("http://127.0.0.1:5000/login")
 
 
 # Login Route
 @app.route('/login' , methods= ['GET','POST'])
 def login():
 
-    CONFIG_FILE_GENERATOR = configFileGenerator.ConfigFileGenerator()
-
     # If request is a POST method then use the information to fetch data from the XNAT instance
     # Update the global data_fetched list and redirect to the dashboard 
     # where the global data_fetched will be used
 
     if(request.method== 'POST'):
+
         userDetail = request.form
         userName = userDetail['username']
         userPassword = userDetail['password']
         global data_fetched 
-        data_fetched = CONFIG_FILE_GENERATOR.name_and_pass(name= userName, password=userPassword)
+        global dataFormatter
+        data_formatter = dataFormatter.Formatter(userName, userPassword)
+        data_fetched = data_formatter.stats()
 
         if(data_fetched != None): # If the credential are right then add userName
             data_fetched.append(userName)
             print(data_fetched)
-        return redirect("https://statsxnat.herokuapp.com/dashboard")
+        return redirect("http://127.0.0.1:5000/dashboard")
+
     else:
+
         return render_template('login.html')
 
 
@@ -55,4 +58,4 @@ def dashboard():
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=5000)
+    app.run(debug=True)

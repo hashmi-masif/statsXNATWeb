@@ -1,7 +1,7 @@
 import pytest
 from src import check_network, dataFormatter
 
-data_formatter = dataFormatter.Formatter()
+data_formatter = dataFormatter.Formatter('testUser', 'testPassword')
 
 def test_stats():
 

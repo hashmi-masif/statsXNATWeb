@@ -2,7 +2,13 @@ from src import dataFetcher
 
 class Formatter:
 
-    data = dataFetcher.Fetcher()   # Data Fetcher Object
+    data = None   # Data Fetcher Object
+
+    # Passing the name and password to fetcher object
+    def __init__(self, name, password):
+
+        self.data = dataFetcher.Fetcher(name, password)
+
 
     def stats(self):
 

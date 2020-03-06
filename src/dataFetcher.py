@@ -2,14 +2,18 @@
 
 from pyxnat import Interface
 
-
 class Fetcher:
 
-    try: # Checking if the configuration file is created
-        SELECTOR = Interface(config = 'ConfigFile/central.cfg')
-    except:
-        print("Please create the configuration file first")
-        exit(1)
+    SELECTOR = None
+
+    # Initializing the central interface object in the constructor
+    def __init__(self, name, password):
+
+        SELECTOR = Interface(server = 'https://central.xnat.org',
+                            user = name,
+                            password = password   )
+
+        self.SELECTOR = SELECTOR
 
     def get_projects(self):
 
