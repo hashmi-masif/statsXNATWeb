@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, redirect
-import configFileGenerator
-from src import dataFetcher
+from src import dataFetcher, configFileGenerator
 
 app = Flask(__name__)
 
