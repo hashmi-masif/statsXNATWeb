@@ -6,17 +6,12 @@ class ConfigFileGenerator:
     name = ""
     password = ""
 
-    def name_and_pass(self, name, password, test_check=0): # Function for taking input from the users
+    def name_and_pass(self, name, password): # Function for taking input from the users
 
-        if(test_check == 0):     # To check whether network connection is fine 
-            self.name = name
-            self.password = password
-            data = self.generator() 
-            return data         # This will return list containing information or None
-        else:
-            self.name = 'testUser'
-            self.password = 'testPassword'
-            return None
+        self.name = name
+        self.password = password
+        data = self.generator() 
+        return data
 
     def generator(self): # Function for creating the configuration file
 
