@@ -14,6 +14,7 @@ def test_name_and_pass():
 
     if(check_network.connect()):
         assert type(data) == list
+        assert len(data) == 9
     else:
         assert out == None
 
@@ -27,6 +28,7 @@ def test_generator():
 
     if(check_network.connect()):
         assert type(data) == list
+        assert len(data) == 9
     else:
         assert out == None
 
