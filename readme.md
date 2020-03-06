@@ -3,6 +3,12 @@
 
 statsXNATWeb is a integration of statsXNAT with a website. This website gives the user an overview of the data present at XNAT servers in a graphical form. statsXNAT uses pyXNAT to connect to the XNAT servers using RESTful Web services provided by XNAT.
 
+### Test User
+
+For checking the website a new test user credentials are created
+
+USERNAME : testUser
+PASSWORD : testPassword
 
 ## Dependencies
 
