@@ -10,7 +10,7 @@ data_fetched = None
 # This route redirect to login page
 @app.route("/")
 def home():
-    return redirect("https://statsxnat.heroku.com/login")
+    return redirect("http://statsxnat.heroku.com/login")
 
 
 # Login Route
@@ -35,7 +35,7 @@ def login():
             data_fetched.append(userName)
             print(data_fetched)
 
-        return redirect("https://statsxnat.heroku.com/dashboard")
+        return redirect("http://statsxnat.heroku.com/dashboard")
 
     else:
 
