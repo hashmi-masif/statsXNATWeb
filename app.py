@@ -48,7 +48,7 @@ def dashboard():
     
     global data_fetched
 
-    # If the data_fetched is None result in error in login credentials
+    # If the data_fetched is None then error is present login credentials
 
     if(data_fetched != None):
         print(data_fetched)
