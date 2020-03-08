@@ -24,8 +24,8 @@ def login():
     if(request.method== 'POST'):
 
         user_detail = request.form
-        user_name = userDetail['username']
-        user_password = userDetail['password']
+        user_name = user_detail['username']
+        user_password = user_detail['password']
         global data_fetched 
         global dataFormatter
         data_formatter = dataFormatter.Formatter(user_name, user_password)
@@ -49,14 +49,15 @@ def dashboard():
     global data_fetched
 
     # If the data_fetched is None then error is present login credentials
-
+    print(data_fetched)
     if(data_fetched != None):
         print(data_fetched)
         return render_template('dashboard.html', data_fetched = data_fetched)
     else:
-        return "Please login again with correct credentials no data found "
+        print("Exit")
+        return render_template('error.html')
 
 
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=5000)
+     app.run(threaded=True, port=5000)
