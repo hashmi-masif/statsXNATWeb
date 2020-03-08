@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect
-from src import dataFormatter
+from statsXNAT import dataFormatter
 
 app = Flask(__name__)
 

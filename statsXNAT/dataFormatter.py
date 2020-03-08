@@ -1,4 +1,4 @@
-from src import dataFetcher
+from statsXNAT import dataFetcher
 
 class Formatter:
 

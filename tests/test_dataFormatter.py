@@ -1,5 +1,5 @@
 import pytest
-from src import check_network, dataFormatter
+from statsXNAT import check_network, dataFormatter
 
 data_formatter = dataFormatter.Formatter('testUser', 'testPassword')
 

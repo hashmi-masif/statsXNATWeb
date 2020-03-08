@@ -1,5 +1,5 @@
 import pytest
-from src import dataFetcher, check_network
+from statsXNAT import dataFetcher, check_network
 
 data_fetcher = dataFetcher.Fetcher('testUser', 'testPassword')    # Object of the Fetcher class
 
