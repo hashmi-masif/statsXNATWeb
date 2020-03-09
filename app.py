@@ -4,8 +4,8 @@ from statsXNAT import dataFormatter
 app = Flask(__name__)
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-data_fetched = None
-
+user_name = ""
+user_password = ""
 
 # This route redirect to login page
 @app.route("/")
@@ -24,16 +24,10 @@ def login():
     if(request.method== 'POST'):
 
         user_detail = request.form
+        global user_name
+        global user_password
         user_name = user_detail['username']
         user_password = user_detail['password']
-        global data_fetched 
-        global dataFormatter
-        data_formatter = dataFormatter.Formatter(user_name, user_password)
-        data_fetched = data_formatter.stats()
-
-        if(data_fetched != None): # If the credential are right then add userName
-            data_fetched.append(user_name)
-            print(data_fetched)
 
         return redirect("https://statsxnat.herokuapp.com/dashboard")
 
@@ -46,11 +40,15 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     
-    global data_fetched
+    global user_password
+    global user_password
+    data_formatter = dataFormatter.Formatter(user_name, user_password)
+    data_fetched = data_formatter.stats()
 
-    # If the data_fetched is None then error is present login credentials
-    print(data_fetched)
-    if(data_fetched != None):
+    if(data_fetched != None): 
+        # If the credential are right then add userName and
+        # send the data to html
+        data_fetched.append(user_name)
         print(data_fetched)
         return render_template('dashboard.html', data_fetched = data_fetched)
     else:
@@ -60,4 +58,4 @@ def dashboard():
 
 
 if __name__ == "__main__":
-     app.run(threaded=True, port=5000)
+     app.run(debug=True, port=5000)
