@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/Udolf15/statsXNATWeb.svg?branch=master)](https://travis-ci.com/Udolf15/statsXNATWeb)
-  
+[![Coverage Status](https://coveralls.io/repos/github/Udolf15/statsXNATWeb/badge.svg)](https://coveralls.io/github/Udolf15/statsXNATWeb)
 
 # statsXNAT Web
 
