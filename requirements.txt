@@ -26,7 +26,6 @@ pytest==5.3.5
 pytest-cov==2.8.1
 pytest-cover==3.0.0
 pytest-coverage==0.0
-python-coveralls==2.9.3
 pyxnat==1.2.1.0.post3
 PyYAML==5.3
 requests==2.23.0
