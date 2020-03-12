@@ -1,7 +1,7 @@
 import pytest
 from statsXNAT import check_network, dataFormatter
 
-data_formatter = dataFormatter.Formatter('testUser', 'testPassword')
+data_formatter = dataFormatter.Formatter('testUser', 'testPassword', 'https://central.xnat.org')
 
 def test_stats():
 

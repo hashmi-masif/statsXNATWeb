@@ -1,7 +1,7 @@
 import pytest
 from statsXNAT import dataFetcher, check_network
 
-data_fetcher = dataFetcher.Fetcher('testUser', 'testPassword')    # Object of the Fetcher class
+data_fetcher = dataFetcher.Fetcher('testUser', 'testPassword', 'https://central.xnat.org')    # Object of the Fetcher class
 
 
 def test_get_projects():
