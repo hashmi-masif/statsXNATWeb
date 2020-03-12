@@ -10,7 +10,7 @@ user_password = ""
 # This route redirect to login page
 @app.route("/")
 def home():
-    return redirect("https://statsxnat.herokuapp.com/login")
+    return redirect("http://127.0.0.1:5000/login")
 
 
 # Login Route
@@ -29,7 +29,7 @@ def login():
         user_name = user_detail['username']
         user_password = user_detail['password']
 
-        return redirect("https://statsxnat.herokuapp.com/dashboard")
+        return redirect("http://127.0.0.1:5000/dashboard")
 
     else:
 
