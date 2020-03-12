@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.com/Udolf15/statsXNATWeb.svg?branch=master)](https://travis-ci.com/Udolf15/statsXNATWeb)
   
 
 # statsXNAT Web
