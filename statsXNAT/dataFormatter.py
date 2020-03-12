@@ -5,9 +5,9 @@ class Formatter:
     data = None   # Data Fetcher Object
 
     # Passing the name and password to fetcher object
-    def __init__(self, name, password):
+    def __init__(self, name, password, instance_url):
 
-        self.data = dataFetcher.Fetcher(name, password)
+        self.data = dataFetcher.Fetcher(name, password, instance_url)
 
 
     def stats(self):

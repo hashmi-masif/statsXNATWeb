@@ -7,9 +7,9 @@ class Fetcher:
     SELECTOR = None
 
     # Initializing the central interface object in the constructor
-    def __init__(self, name, password):
+    def __init__(self, name, password, instance_url):
 
-        SELECTOR = Interface(server = 'https://central.xnat.org',
+        SELECTOR = Interface(server = instance_url,
                             user = name,
                             password = password   )
 
