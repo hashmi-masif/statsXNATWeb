@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 user_name = ""
 user_password = ""
+instance_url = ""
 
 # This route redirect to login page
 @app.route("/")
@@ -26,8 +27,10 @@ def login():
         user_detail = request.form
         global user_name
         global user_password
+        global instance_url
         user_name = user_detail['username']
         user_password = user_detail['password']
+        instance_url = user_detail['instance_url']
 
         return redirect("http://127.0.0.1:5000/dashboard")
 
@@ -42,7 +45,9 @@ def dashboard():
     
     global user_password
     global user_password
-    data_formatter = dataFormatter.Formatter(user_name, user_password)
+    global instance_url
+
+    data_formatter = dataFormatter.Formatter(user_name, user_password, instance_url)
     data_fetched = data_formatter.stats()
 
     if(data_fetched != None): 
@@ -58,4 +63,4 @@ def dashboard():
 
 
 if __name__ == "__main__":
-     app.run(threaded = True, port=5000)
+     app.run(debug = True, port=5000)
