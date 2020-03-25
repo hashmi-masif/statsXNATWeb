@@ -7,7 +7,7 @@ statsXNATWeb is a integration of statsXNAT with a website. This website gives th
 
 ## Testing
 
-For checking the website a new test user credentials are created
+For checking the website you can use the below information
 - instance url : https://central.xnat.org
 - username : Your user name at central XNAT
 - password : Your password at central XNAT
